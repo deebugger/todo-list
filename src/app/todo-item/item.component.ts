@@ -5,11 +5,13 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   template: `
     <div class="todo-item">
       <input class="todo-checkbox"
-             type="checkbox">
+             type="checkbox"
+             (click)="toggleCompleted()">
       
       <span class="todo-title"
             [hidden]="editing" 
-            (click)="editItem()">{{ item.title }}</span>
+            (click)="editItem()"
+            [class.completed]="item.completed">{{ item.title }}</span>
       
       <todo-input [hidden]="!editing"
                   [title]="item.title"
@@ -54,6 +56,12 @@ export class ItemComponent implements OnInit {
 
   cancelEdit() {
     this.editing = false;
+  }
+
+  toggleCompleted() {
+    console.log('before: ' + this.item.completed);
+    this.item.completed = !this.item.completed;
+    console.log('after: ' + this.item.completed);
   }
 
 }

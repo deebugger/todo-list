@@ -38,3 +38,6 @@ ol, ul {
 .btn:hover {
   background: lightslategrey;
 }
+.completed {
+  text-decoration: line-through;
+}
