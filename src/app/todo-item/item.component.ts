@@ -59,9 +59,7 @@ export class ItemComponent implements OnInit {
   }
 
   toggleCompleted() {
-    console.log('before: ' + this.item.completed);
     this.item.completed = !this.item.completed;
-    console.log('after: ' + this.item.completed);
   }
 
 }
